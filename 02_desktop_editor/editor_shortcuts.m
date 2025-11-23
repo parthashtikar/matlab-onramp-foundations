@@ -1,57 +1,58 @@
-%% MATLAB Editor Shortcuts & Workflow Guide
-% Author: Parth Ashtikar
-% Description:
-%   Demonstrating essential MATLAB Editor features:
-%   - Running sections (Run Section)
-%   - Running entire script (Run)
-%   - Adding new sections (%%)
-%   - Breakpoints for debugging
-%   - Converting code ↔ text using Editor tools
-%   - Clean workflow for engineering reproducibility
+%% MATLAB Editor Workflow Practice
+% Basic exploration of Editor features:
+% sections, run-section, breakpoints, commenting, folding, and formatting.
 
-%% SECTION 1 — Basic Variables (Run Section demo)
-% Try using:
-%    - Run Section  (Ctrl + Enter)
-%    - Run to Here  (Right-click → Run to Here)
+%% Section 1 — Run Section / Run File
+% Try running only this block using Run Section (Cmd+Enter) vs Run (F5).
 
-x = 10;
-y = 4;
-product_xy = x * y;
+a = 10;
+b = 4;
+result1 = a * b;
 
-disp("Product: " + product_xy);
+disp("Result 1: " + result1);
 
-%% SECTION 2 — Add Breakpoint (Debugging demo)
-% Place a breakpoint on the next line by clicking the left margin.
+%% Section 2 — Run to Here
+% Right-click → Run to Here executes everything above this point.
 
-random_values = rand(1, 5);   % Break here and inspect in Workspace
+c = 5;
+result2 = a + b + c;
+disp("Result 2: " + result2);
 
-mean_val = mean(random_values);
-disp("Mean: " + mean_val);
+%% Section 3 — Breakpoints
+% Add a breakpoint on the next line and inspect variables.
 
-%% SECTION 3 — Creating New Sections (%% Separator)
-% You can create new sections using "%%".
-% Useful for organizing long scripts.
+vals = rand(1,5);    % Break here
+mean_vals = mean(vals);
 
-%% SECTION 4 — Code Folding Demo
-% Highlight this block and use the fold arrow in the Editor.
+disp("Mean vals = " + mean_vals);
 
+%% Section 4 — Comment / Uncomment / Text Mode
+% macOS:
+%   Comment/Uncomment: Cmd + /
+%   Text <-> Code blocks: Editor tab tools
+
+v = [1 2 3];
+squared = v.^2;
+
+%% Section 5 — Code Folding
+% Folding works on long blocks:
 %{
-fold_me = linspace(0, 1, 50);
-fold_result = fold_me.^2;
+
+x = linspace(0,2*pi,100);
+y = sin(x);
+
 %}
 
-%% SECTION 5 — Converting Code ↔ Text
-% Try selecting a block → 
-%    Editor Tab → "Comment" (Text) or "Code" mode.
-%
-% MATLAB allows switching:
-%   - Code → Text (for explanations)
-%   - Text → Code (for executable commands)
+%% Section 6 — Auto-Indent / Formatting
+% macOS: Cmd + I
 
-% Example code block:
-sample = [3 6 9];
-avg_sample = mean(sample);
+   messy   =   [3 1 4 1 5];   % Try auto-indent
+sorted_vals = sort(messy);
 
-%% SECTION 6 — Run Whole Script
-% Use the "Run" button or press F5 to run the entire file.
-disp("Entire script executed successfully.")
+%% Section 7 — Find & Replace
+% Cmd+F for find, Cmd+Shift+F for replace (useful for renaming variables).
+
+tempVar = 42;
+
+%% Section 8 — Final Full Run
+disp("Script executed fully.");
